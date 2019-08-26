@@ -20,7 +20,7 @@ Each version of the app is its own directory so that you can compare their diffe
 
 Each app can be imported into an IDE. You can run the `main` method in `SocialApplication` to start an app.
 They all come up with a home page on http://localhost:8080
-(and all require that you have at least a GitHub account if you want to log in and see the content).
+(and all require that you have at least a GitHub and Google account if you want to log in and see the content).
 
 You can also run all the apps on the command line using `mvn spring-boot:run`
 or by building the jar file and running it with `mvn package` and `java -jar target/*.jar`
@@ -36,8 +36,8 @@ $ ../mvnw package
 $ java -jar target/*.jar
 ```
 
-NOTE: The apps all work on `localhost:8080` because they use OAuth 2.0 clients registered with GitHub for that address.
-To run them on a different host or port, you need to register your own apps and put the credentials in the config files.
-There is no danger of leaking your GitHub credentials beyond localhost if you use the default values.
+NOTE: The apps all work on `localhost:8080` because they'll use OAuth 2.0 clients registered with GitHub and Google for that address.
+To run them on a different host or port, you need to register your apps that way.
+There is no danger of leaking your credentials beyond localhost if you use the default values.
 But, be careful what you expose on the Internet, and don't put your own app registrations in public source control.
 

@@ -65,7 +65,6 @@ Many JavaScript frameworks have built in support for CSRF (e.g. in Angular they 
 For instance, in Angular, the front end would like the server to send it a cookie called "XSRF-TOKEN" and if it sees that, it will send the value back as a header named "X-XSRF-TOKEN".
 We can implement the same behaviour with our simple jQuery client, and then the server-side changes will work with other front end implementations with no or very few changes.
 To teach Spring Security about this we need to add a filter that creates the cookie.
-Also, we need to tell the existing CRSF filter about the header name.
 
 In the `WebSecurityConfigurerAdapter` we do the following:
 
@@ -131,7 +130,6 @@ $.ajaxSetup({
 == Ready To Roll!
 
 With those changes in place, we are ready to run the app and try out the new logout button.
-
 Start the app and load the home page in a new browser window.
 Click on the "Login" link to take you to GitHub (if you are already logged in there you might not notice the redirect).
 Click on the "Logout" button to cancel the current session and return the app to the unauthenticated state.

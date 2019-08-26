@@ -49,7 +49,7 @@ Note that this JavaScript expects the server-side endpoint to be called `/user`.
 == The `/user` Endpoint
 
 Now, you'll add the server-side endpoint just mentioned, calling it `/user`.
-It will send back the currently logged in user, which we can do quite easily in our main class:
+It will send back the currently logged-in user, which we can do quite easily in our main class:
 
 .SocialApplication.java
 [source,java]
@@ -72,7 +72,7 @@ public class SocialApplication {
 
 Note the use of `@RestController`, `@GetMapping`, and the `OAuth2User` injected into the handler method.
 
-WARNING: It's not a great idea to return a whole `OAuth2User` in an endpoint like this since it might contain information you would rather not reveal to a browser client.
+WARNING: It's not a great idea to return a whole `OAuth2User` in an endpoint since it might contain information you would rather not reveal to a browser client.
 
 == Making the Home Page Public
 

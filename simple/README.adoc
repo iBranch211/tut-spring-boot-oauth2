@@ -21,7 +21,7 @@ You can then import that project into your favorite IDE (it's a normal Maven Jav
 == Add a Home Page
 
 In your new project, create `index.html` in the `src/main/resources/static` folder.
-You should add some style sheets and JavaScript links so the result looks like this:
+You should add some stylesheets and JavaScript links so the result looks like this:
 
 .index.html
 [source,html]
@@ -48,8 +48,8 @@ You should add some style sheets and JavaScript links so the result looks like t
 
 None of this is necessary to demonstrate the OAuth 2.0 login features, but it'll be nice to have a pleasant UI in the end, so you might as well start with some basic stuff in the home page.
 
-If you start the app and load the home page, you will notice that the stylesheets have not been loaded.
-So you need to add those as well by adding jQuery and Twitter Bootstrap:
+If you start the app and load the home page, you'll notice that the stylesheets have not been loaded.
+So, you need to add those as well by adding jQuery and Twitter Bootstrap:
 
 .pom.xml
 [source,xml]
@@ -161,7 +161,7 @@ It then uses the access token to ask GitHub for some personal details (only what
 In this phase, GitHub is acting as a Resource Server, decoding the token that you send and checking if it gives the app permission to access the user's details.
 If that process is successful, the app inserts the user details into the Spring Security context so that you are authenticated.
 
-If you look in the browser tools (F12 on Chrome or Firefox) and follow the network traffic for all the hops, you will see the redirects back and forth with GitHub, and finally you land back on the home page with a new `Set-Cookie` header.
+If you look in the browser tools (F12 on Chrome or Firefox) and follow the network traffic for all the hops, you will see the redirects back and forth with GitHub, and finally you'll land back on the home page with a new `Set-Cookie` header.
 This cookie (`JSESSIONID` by default) is a token for your authentication details for Spring (or any servlet-based) applications.
 
 So we have a secure application, in the sense that to see any content a user has to authenticate with an external provider (GitHub).

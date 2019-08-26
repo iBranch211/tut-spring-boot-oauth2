@@ -1,7 +1,7 @@
 [[_social_login_first_party]]
 = Login with GitHub
 
-In this section, we modify the <<_social_login_logout,app>> we built already, adding a sticker page so that the end-user can choose between multiple sets of credentials.
+In this section, you'll modify the <<_social_login_logout,logout>> app you built already, adding a sticker page so that the end-user can choose between multiple sets of credentials.
 
 Let's add Google as a second option for the end user.
 
@@ -26,8 +26,8 @@ In the "Set a redirect URI" sub-section, ensure that the *Authorized redirect UR
 
 == Adding the Client Registration
 
-Then, we also need to configure our client to point Google.
-Because Spring Security is built with multiple clients in mind, we can add our Google credentials alongside the ones we created for GitHub:
+Then, you need to configure the client to point Google.
+Because Spring Security is built with multiple clients in mind, you can add our Google credentials alongside the ones you created for GitHub:
 
 .application.yml
 [source,yaml]
@@ -45,12 +45,11 @@ spring:
             client-secret: google-client-secret
 ----
 
-As you can see, Google is another provider that Spring Security ships support for.
+As you can see, Google is another provider that Spring Security ships out-of-the-box support for.
 
 == Adding the Login Link
 
-In the client, the change is trivial.
-We just add another link:
+In the client, the change is trivial - you can just add another link:
 
 .index.html
 [source,html]
@@ -80,4 +79,4 @@ We don't show the code here, but it is easy to do in two steps.
   Your implementation can delegate to the default implementation, which will do the heavy lifting of calling the Authorization Server.
   Your implementation should return something that extends your custom `User` object and implements `OAuth2User`.
 
-Hint: add a field in the `User` object to link to a unique identifier in the external provider (not the user's name, but something that is unique to the account in the external provider).
+Hint: add a field in the `User` object to link to a unique identifier in the external provider (not the user's name, but something that's unique to the account in the external provider).
